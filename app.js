@@ -13,25 +13,38 @@ const connection = mysql.createConnection({
     database: "employee_db"
 });
 
+const ADD = "ADD", VIEW = "VIEW", UPDATE = "UPDATE", REMOVE = "REMOVE";
+
 connection.connect((error) => {
     if (error) throw error;
     console.log("Connected to Database");
     init();
 });
 
+async function init() {
+    console.log("Initializing");
+}
+
+async function add()
 // Add Department
 
 // Add Role
 
 // Add Employee
 
+async function view() {
+
+}
 // View Departments
 
 // View Roles
 
 // View Employees
 
+async function update()
 // Update Employee Roles
+
+
 
 connection.end(function (err) {
     // The connection is terminated now
