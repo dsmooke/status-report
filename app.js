@@ -19,4 +19,16 @@ connection.connect((error) => {
     init();
 });
 
+// Add Department
 
+// Add Role
+
+// Add Employee
+
+// View Departments
+
+// View Roles
+
+// View Employees
+
+// Update Employee Roles
