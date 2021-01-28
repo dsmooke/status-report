@@ -41,14 +41,19 @@ const questions = [
     {
         name: "removeEmployee",
         type: "list",
-        message: "Which Employees do you want to remove?",
+        message: "Which employees do you want to remove?",
         choices: []
     },
-
+    {
+        name: "firstName",
+        type: "list",
+        message: "Who is the employee's manager?",
+        choices: []
+    },
     {
         name: "updateManager",
         type: "list",
-        message: "Which Employee's Manager do you want to update?",
+        message: "Which employee's manager do you want to update?",
         choices: []
     },
 
