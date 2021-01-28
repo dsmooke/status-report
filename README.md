@@ -73,6 +73,7 @@ The goals above and the application can be further understood with the following
 ## Instructions
 
 Design the following database schema containing three tables: 
+
 ![schema-demo](https://via.placeholder.com/150)
 
 * **department**:
@@ -183,13 +184,17 @@ const writeFileAsync = util.promisify(fs.writeFile);
 ## Usage
 
 Enter your inputs via the command-line...Your inputs should look like this in the terminal before your tables are generated:
+
 ![view of terminal prompts](https://via.placeholder.com/150)
 
 Your inputs should look like this:
+
 ![code to file](https://via.placeholder.com/150)
 
 The final result should look like this: 
+
 ![Final Result](https://via.placeholder.com/150)
+
 ![Employee Tracker](https://via.placeholder.com/150)
 
 Watch a complete run through of the application, or watch on YouTube [here](link)
