@@ -51,4 +51,11 @@ const questions = [
         message: "Which Employee's Manager do you want to update?",
         choices: []
     },
+
+    {
+        name: "removeRole",
+        type: "list",
+        message: "What role would you like to remove?",
+        choices: []
+    },
 ];
