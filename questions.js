@@ -20,5 +20,12 @@ const questions = [
             "Update Employee Manager"
         ]
 
-    }
+    },
+
+    {
+        name: "removeEmployee",
+        type: "list",
+        message: "Which Employees do you want to remove?",
+        choices: []
+    },
 ];
