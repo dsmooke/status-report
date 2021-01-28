@@ -32,3 +32,7 @@ connection.connect((error) => {
 // View Employees
 
 // Update Employee Roles
+
+connection.end(function (err) {
+    // The connection is terminated now
+});
