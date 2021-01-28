@@ -23,6 +23,17 @@ const questions = [
     },
 
     {
+        name: "firstName",
+        type: "input",
+        message: "What is the employee's first name?",
+    },
+    {
+        name: "lastName",
+        type: "input",
+        message: "What is the employee's last name?",
+    },
+
+    {
         name: "removeEmployee",
         type: "list",
         message: "Which Employees do you want to remove?",
