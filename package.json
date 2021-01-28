@@ -1,0 +1,26 @@
+{
+  "name": "status-report",
+  "version": "1.0.0",
+  "description": "HW12 MySQL-architect and build a solution for managing a company's employees using node, inquirer, and MySQL.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsmooke/status-report.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dsmooke/status-report/issues"
+  },
+  "homepage": "https://github.com/dsmooke/status-report#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
