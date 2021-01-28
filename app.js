@@ -3,6 +3,8 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 
+const cTable = require("console.table");
+
 const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -16,3 +18,5 @@ connection.connect((error) => {
     console.log("Connected to Database");
     init();
 });
+
+
