@@ -28,4 +28,11 @@ const questions = [
         message: "Which Employees do you want to remove?",
         choices: []
     },
+
+    {
+        name: "updateManager",
+        type: "list",
+        message: "Which Employee's Manager do you want to update?",
+        choices: []
+    },
 ];
