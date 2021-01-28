@@ -32,7 +32,12 @@ const questions = [
         type: "input",
         message: "What is the employee's last name?",
     },
-
+    {
+        name: "employeeRole",
+        type: "list",
+        message: "What is the employee's role?",
+        choices: []
+    },
     {
         name: "removeEmployee",
         type: "list",
