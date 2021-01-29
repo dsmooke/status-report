@@ -25,7 +25,7 @@ async function init() {
     console.log("Initializing");
 }
 
-async function add()
+async function add() { };
 // Add Department
 
 // Add Role
@@ -34,17 +34,18 @@ async function add()
 
 async function view() {
 
-}
+};
 // View Departments
 
 // View Roles
 
 // View Employees
 
-async function update()
+async function update() { };
 // Update Employee Roles
 
-
+// Remove Role
+// Remove Employee
 
 connection.end(function (err) {
     // The connection is terminated now
