@@ -4,7 +4,7 @@ const fs = require("fs");
 const util = require("util");
 
 const questions = require("./questions"); // access with dot notation
-console.log(questions.find((item) => item.name === "firstName"));
+// console.log(questions.find((item) => item.name === "firstName"));
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -22,10 +22,15 @@ const ADD = "ADD",
 connection.connect((error) => {
   if (error) throw error;
   console.log("Connected to Database");
-    init();
+    // init();
 });
 
-function viewRole(role) {
+// Add Employee []
+// Add Department []
+// Add Roles []
+
+// Filter by Role Function
+function filterRole(role) {
   const data = {
     employeeList: [],
   };
@@ -39,6 +44,12 @@ function viewRole(role) {
   }
   return data;
 }
+
+// Filter by Department Function
+
+// Filter by Employee Function async function view() {}
+
+// Update Employee Role Function async function update() {}
 
 const cTable = require("console.table");
 
@@ -61,26 +72,6 @@ console.table(
 // async function init() {
 //   console.log("Initializing");
 // }
-
-// async function add() {}
-// // Add Department
-
-// // Add Role
-
-// // Add Employee
-
-// async function view() {}
-// // View Departments
-
-// // View Roles
-
-// // View Employees
-
-// async function update() {}
-// // Update Employee Roles
-
-// // Remove Role
-// // Remove Employee
 
 connection.end(function (err) {
   // The connection is terminated now
