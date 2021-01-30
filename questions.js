@@ -1,4 +1,6 @@
 module.exports = [
+
+  // What would you like to do?
   {
     name: "doWhat",
     type: "list",
@@ -17,45 +19,95 @@ module.exports = [
     ],
   },
 
+  // What is the employee's first name?
   {
     name: "firstName",
     type: "input",
     message: "What is the employee's first name?",
   },
+
+  // What is the employee's last name?
   {
     name: "lastName",
     type: "input",
     message: "What is the employee's last name?",
   },
+
+  // What is the employee's role?
   {
     name: "employeeRole",
     type: "list",
     message: "What is the employee's role?",
     choices: [],
   },
+
+  // What is the employee's salary?
   {
-    name: "removeEmployee",
-    type: "list",
-    message: "Which employees do you want to remove?",
-    choices: [],
+    name: "salary",
+    type: "input",
+    message: "What is the employee's salary?",
   },
+  // What is the employee's department?
   {
-    name: "firstName",
+    name: "employeeDept",
+    type: "list",
+    message: "What is the employee's department?",
+    choices: [], // names of departments
+  },
+  
+  // Which employee's roles do you want to update?
+  {
+    name: "updateRole",
+    type: "list",
+    message: "What is the employee's new role?",
+    choices: [], // names of roles
+  },
+
+
+
+
+
+
+  
+  // View employees by manager (Bonus)
+  {
+    name: "managerName",
     type: "list",
     message: "Who is the employee's manager?",
-    choices: [],
+    choices: [], // names of managers
   },
+
+
+  // Update employees by manager (Bonus)
   {
     name: "updateManager",
     type: "list",
     message: "Which employee's manager do you want to update?",
-    choices: [],
+    choices: [], // employee names
   },
 
+
+  // Delete departments (Bonus)
+  {
+    name: "removeDept",
+    type: "list",
+    message: "What department would you like to remove?",
+    choices: [], // names of departments
+  },
+
+  // Delete roles (Bonus)
   {
     name: "removeRole",
     type: "list",
     message: "What role would you like to remove?",
-    choices: [],
+    choices: [], // names of roles
+  },
+  
+  // Delete employees? (Bonus)
+  {
+    name: "removeEmployee",
+    type: "list",
+    message: "Which employees do you want to remove?",
+    choices: [], // names of employees
   },
 ];
