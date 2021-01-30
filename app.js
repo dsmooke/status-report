@@ -42,6 +42,21 @@ function viewRole(role) {
 
 const cTable = require("console.table");
 
+console.table("Employees", [employees]);
+
+
+var employees = [
+  [1, "Zeus", "Jupiter", "Lightning Director", "Heavens", 1000, "Cronus Titan"],
+
+  [2, "Poseiden", "Neptune", "Sea Director", "Sea", 2000, "Cronus Titan"],
+  
+  [3, "Hades", "Pluto", "Underworld Director", "Underworld", 3000, "Cronus Titan"],
+];
+
+console.table(
+  ["id", "first_name", "last_name", "title", "department", "salary", "manager"], employees);
+
+// console.log(table);
 
 // async function init() {
 //   console.log("Initializing");
