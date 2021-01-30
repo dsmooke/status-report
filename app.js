@@ -3,8 +3,11 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 
-const questions = require("./questions"); // access with dot notation
-// console.log(questions.find((item) => item.name === "firstName"));
+const questions = require("./questions");
+// console.log(questions.find((item) => item.name === "firstName")); // access questions
+
+const roles = require("./roles");
+const departments = require("./departments");
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -14,10 +17,7 @@ const connection = mysql.createConnection({
   database: "employee_db",
 });
 
-const ADD = "ADD",
-  VIEW = "VIEW",
-  UPDATE = "UPDATE",
-  REMOVE = "REMOVE";
+const ADD = "ADD", VIEW = "VIEW", UPDATE = "UPDATE", REMOVE = "REMOVE";
 
 connection.connect((error) => {
   if (error) throw error;
