@@ -3,8 +3,6 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 
-const cTable = require("console.table");
-
 const questions = require("./questions"); // access with dot notation
 console.log(questions.find((item) => item.name === "firstName"));
 
@@ -27,29 +25,43 @@ connection.connect((error) => {
   init();
 });
 
-async function init() {
-  console.log("Initializing");
-}
+const cTable = require("console.table");
 
-async function add() {}
-// Add Department
+console.table([
+  {
+    id: 1,
+    first_name: "Alex",
+    last_name: "Smith",
+    title: "Software Engineer",
+    department: "Engineering",
+    manager: "Bob Ross",
+  },
+]);
+console.log(table);
 
-// Add Role
+// async function init() {
+//   console.log("Initializing");
+// }
 
-// Add Employee
+// async function add() {}
+// // Add Department
 
-async function view() {}
-// View Departments
+// // Add Role
 
-// View Roles
+// // Add Employee
 
-// View Employees
+// async function view() {}
+// // View Departments
 
-async function update() {}
-// Update Employee Roles
+// // View Roles
 
-// Remove Role
-// Remove Employee
+// // View Employees
+
+// async function update() {}
+// // Update Employee Roles
+
+// // Remove Role
+// // Remove Employee
 
 connection.end(function (err) {
   // The connection is terminated now
