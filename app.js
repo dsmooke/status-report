@@ -22,22 +22,26 @@ const ADD = "ADD",
 connection.connect((error) => {
   if (error) throw error;
   console.log("Connected to Database");
-  init();
+    init();
 });
+
+function viewRole(role) {
+  const data = {
+    employeeList: [],
+  };
+
+  for (let i = 0; i < employeeList.length; i++) {
+    const employees = employees[i];
+
+    if (employees.role === role) {
+      data.employeeList.push(employees);
+    }
+  }
+  return data;
+}
 
 const cTable = require("console.table");
 
-console.table([
-  {
-    id: 1,
-    first_name: "Alex",
-    last_name: "Smith",
-    title: "Software Engineer",
-    department: "Engineering",
-    manager: "Bob Ross",
-  },
-]);
-console.log(table);
 
 // async function init() {
 //   console.log("Initializing");
