@@ -1,3 +1,6 @@
+const roles = require("./roles");
+const departments = require("./departments");
+
 module.exports = [
 
   // What would you like to do?
@@ -16,7 +19,15 @@ module.exports = [
       "Remove Role",
       "Update Employee Role",
       "Update Employee Manager",
-    ],
+    ]
+  },
+
+  // Add employee 
+  { 
+    name: "addEmp",
+    type: "confirm",
+    message: "Add employee?",
+    // when: questions => questions.addEmp = true 
   },
 
   // What is the employee's first name?
@@ -38,7 +49,7 @@ module.exports = [
     name: "employeeRole",
     type: "list",
     message: "What is the employee's role?",
-    choices: [],
+    choices: ["Software Engineer", "Designer", "Developer", "Salesperson", "Accountant"],
   },
 
   // What is the employee's salary?
@@ -52,7 +63,7 @@ module.exports = [
     name: "employeeDept",
     type: "list",
     message: "What is the employee's department?",
-    choices: [], // names of departments
+    choices: [departments], // names of departments
   },
   
   // Which employee's roles do you want to update?
@@ -68,7 +79,7 @@ module.exports = [
 
 
 
-  
+
   // View employees by manager (Bonus)
   {
     name: "managerName",
