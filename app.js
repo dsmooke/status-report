@@ -6,7 +6,6 @@ const util = require("util");
 const questions = require("./questions");
 // console.log(questions.find((item) => item.name === "firstName")); // access questions
 
-const roles = require("./roles");
 const departments = require("./departments");
 
 const connection = mysql.createConnection({
@@ -25,53 +24,65 @@ connection.connect((error) => {
     // init();
 });
 
+const promptUser = async () => {
+  await inquirer.prompt(questions);
+};
+
 // Add Employee []
 // Add Department []
 // Add Roles []
 
-// Filter by Role Function
-function filterRole(role) {
-  const data = {
-    employeeList: [],
-  };
+// // Filter by Role Function
+// function filterRole(role) {
+//   const data = {
+//     employeeList: [],
+//   };
 
-  for (let i = 0; i < employeeList.length; i++) {
-    const employees = employees[i];
+//   for (let i = 0; i < employeeList.length; i++) {
+//     const employees = employees[i];
 
-    if (employees.role === role) {
-      data.employeeList.push(employees);
-    }
-  }
-  return data;
-}
+//     if (employees.role === role) {
+//       data.employeeList.push(employees);
+//     }
+//   }
+//   return data;
+// }
 
 // Filter by Department Function
-
 // Filter by Employee Function async function view() {}
-
 // Update Employee Role Function async function update() {}
 
-const cTable = require("console.table");
+// const cTable = require("console.table");
 
-console.table("Employees", [employees]);
+// console.table("Employees", [employees]);
 
 
-var employees = [
-  [1, "Zeus", "Jupiter", "Lightning Director", "Heavens", 1000, "Cronus Titan"],
+// var employees = [
+//   [1, "Zeus", "Jupiter", "Lightning Director", "Heavens", 1000, "Cronus Titan"],
 
-  [2, "Poseiden", "Neptune", "Sea Director", "Sea", 2000, "Cronus Titan"],
+//   [2, "Poseiden", "Neptune", "Sea Director", "Sea", 2000, "Cronus Titan"],
   
-  [3, "Hades", "Pluto", "Underworld Director", "Underworld", 3000, "Cronus Titan"],
-];
+//   [3, "Hades", "Pluto", "Underworld Director", "Underworld", 3000, "Cronus Titan"],
+// ];
 
-console.table(
-  ["id", "first_name", "last_name", "title", "department", "salary", "manager"], employees);
+// console.table(
+//   ["id", "first_name", "last_name", "title", "department", "salary", "manager"], employees);
 
 // console.log(table);
 
 // async function init() {
 //   console.log("Initializing");
 // }
+
+const init = async () => {
+  try{
+    await promptUser();
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+init();
 
 connection.end(function (err) {
   // The connection is terminated now
