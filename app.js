@@ -5,48 +5,52 @@ const util = require("util");
 
 const cTable = require("console.table");
 
+const questions = require("./questions"); // access with dot notation
+console.log(questions.find((item) => item.name === "firstName"));
+
 const connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "password",
-    database: "employee_db"
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  password: "password",
+  database: "employee_db",
 });
 
-const ADD = "ADD", VIEW = "VIEW", UPDATE = "UPDATE", REMOVE = "REMOVE";
+const ADD = "ADD",
+  VIEW = "VIEW",
+  UPDATE = "UPDATE",
+  REMOVE = "REMOVE";
 
 connection.connect((error) => {
-    if (error) throw error;
-    console.log("Connected to Database");
-    init();
+  if (error) throw error;
+  console.log("Connected to Database");
+  init();
 });
 
 async function init() {
-    console.log("Initializing");
+  console.log("Initializing");
 }
 
-async function add() { };
+async function add() {}
 // Add Department
 
 // Add Role
 
 // Add Employee
 
-async function view() {
-
-};
+async function view() {}
 // View Departments
 
 // View Roles
 
 // View Employees
 
-async function update() { };
+async function update() {}
 // Update Employee Roles
 
 // Remove Role
 // Remove Employee
 
 connection.end(function (err) {
-    // The connection is terminated now
+  // The connection is terminated now
 });
