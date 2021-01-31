@@ -24,6 +24,7 @@ module.exports = [
     name: "firstName",
     type: "input",
     message: "What is the employee's first name?",
+    when: questions => questions.doWhat === "Add Employee"
   },
 
   // What is the employee's last name?
@@ -31,6 +32,7 @@ module.exports = [
     name: "lastName",
     type: "input",
     message: "What is the employee's last name?",
+    when: questions => questions.firstName === value 
   },
 
   // What is the employee's role?
@@ -54,6 +56,14 @@ module.exports = [
     type: "list",
     message: "What is the employee's department?",
     choices: ["Engineering", "Development", "Finance", "Legal", "Sales"], // names of departments
+  },
+  
+  // Who is the employee's manager?
+  {
+    name: "employeeManager",
+    type: "list",
+    message: "Who is the employee's manager?",
+    choices: ["Adam", "Bill", "Colin", "David"] 
   },
   
   // Which employee's roles do you want to update?
