@@ -17,7 +17,7 @@ const connection = mysql.createConnection({
 });
 
 const ADD = "ADD", VIEW = "VIEW", UPDATE = "UPDATE", REMOVE = "REMOVE";
-employeeList = [];
+
 
 connection.connect((error) => {
   if (error) throw error;
@@ -25,20 +25,24 @@ connection.connect((error) => {
     // init();
 });
 
+let employeeList = [];
+
 const promptUser = async () => {
-  await inquirer.prompt(questions);
+  const answers = await inquirer.prompt(questions)
 
   // const newEmployee = (questions.firstName, questions.lastName, questions.employeeRole, questions.salary, questions.employeeDept, questions.employeeManager)
-
-  if (questions.doWhat === "Add Employee") {
-    prompt(questions.firstName) 
-    const newEmployee = new Employee(questions.firstName, questions.lastName, questions.employeeRole, questions.salary, questions.employeeDept, questions.employeeManager)
-    employeeList.push(newEmployee);
-    
-    
-  }
-  console.log(newEmployee)
 };
+
+function addEmployee() {
+  if (questions.doWhat === "Add Employee") {
+
+    const employee = new Employee(questions.firstName, questions.lastName, questions.employeeRole, questions.salary, questions.employeeDept, questions.employeeManager)
+    employeeList.push(employee);
+    
+
+    } 
+};
+addEmployee();
 
 // Add Employee []
 // Add Department []
@@ -89,6 +93,8 @@ const promptUser = async () => {
 const init = async () => {
   try{
     await promptUser();
+
+    console.log(employeeList);
 
   } catch (error) {
     console.log(error);
