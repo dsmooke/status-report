@@ -1,6 +1,3 @@
-const roles = require("./roles");
-const departments = require("./departments");
-
 module.exports = [
 
   // What would you like to do?
@@ -58,12 +55,13 @@ module.exports = [
     type: "input",
     message: "What is the employee's salary?",
   },
+  
   // What is the employee's department?
   {
     name: "employeeDept",
     type: "list",
     message: "What is the employee's department?",
-    choices: [departments], // names of departments
+    choices: ["Engineering", "Development", "Finance", "Legal", "Sales"], // names of departments
   },
   
   // Which employee's roles do you want to update?
@@ -71,7 +69,7 @@ module.exports = [
     name: "updateRole",
     type: "list",
     message: "What is the employee's new role?",
-    choices: [], // names of roles
+    choices: ["Software Engineer", "Designer", "Developer", "Salesperson", "Accountant"], // names of roles
   },
 
 
