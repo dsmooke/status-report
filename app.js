@@ -6,8 +6,6 @@ const util = require("util");
 const questions = require("./questions");
 // console.log(questions.find((item) => item.name === "firstName")); // access questions
 
-const departments = require("./departments");
-
 const connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
@@ -15,9 +13,6 @@ const connection = mysql.createConnection({
   password: "password",
   database: "employee_db",
 });
-
-const ADD = "ADD", VIEW = "VIEW", UPDATE = "UPDATE", REMOVE = "REMOVE";
-
 
 connection.connect((error) => {
   if (error) throw error;
@@ -38,15 +33,10 @@ function addEmployee() {
 
     const employee = new Employee(questions.firstName, questions.lastName, questions.employeeRole, questions.salary, questions.employeeDept, questions.employeeManager)
     employeeList.push(employee);
-    
 
     } 
 };
 addEmployee();
-
-// Add Employee []
-// Add Department []
-// Add Roles []
 
 // // Filter by Role Function
 // function filterRole(role) {
@@ -63,10 +53,6 @@ addEmployee();
 //   }
 //   return data;
 // }
-
-// Filter by Department Function
-// Filter by Employee Function async function view() {}
-// Update Employee Role Function async function update() {}
 
 // const cTable = require("console.table");
 
