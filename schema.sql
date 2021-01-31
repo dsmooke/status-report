@@ -34,12 +34,11 @@ CREATE TABLE role (
 );
 
 
--- Inserted a set of records into the table
-INSERT INTO employee (id, first_name, last_name, role_id, salary, manager_id)
-VALUES (1, "Zeus", "Jupiter", "Lightning Director", 1000, 1);
+-- show ALL employees
+SELECT id, first_name, last_name
+FROM employee
+INNER JOIN role ON employee.role_id = role.id;
 
-INSERT INTO department (id, name)
-VALUES (1, "Heavens");
-
-INSERT INTO role (id, title, salary, department_id)
-VALUES (1, "Lightning Director", 911000, "Heavens");
+SELECT id, name
+FROM department
+RIGHT JOIN department ON employee.role_id = role.id;
