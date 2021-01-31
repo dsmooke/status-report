@@ -9,26 +9,28 @@ USE employee_db;
 
 -- Created the table "department"
 CREATE TABLE department (
-id INT PRIMARY KEY,
-name VARCHAR(30) -- to hold departmentname
+id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(30),
+PRIMARY KEY (id)
+);
+
+-- Created the table "role"
+CREATE TABLE role (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(30), 
+    salary DECIMAL, 
+    department_id INT
+    PRIMARY KEY (id)
 );
 
 -- Created the table "employee"
 CREATE TABLE employee (
     id INT NOT NULL AUTO_INCREMENT,
-    first_name VARCHAR(30) NOT NULL, -- to hold employee first name
-    last_name VARCHAR(50) NOT NULL, -- to hold employee last name
-    role_id INTEGER default 0, --  to hold reference to role employee has
-    manager_id INTEGER default 0, -- to hold reference to another employee that manages the employee being created. This field may be null if the employee has no manager
+    first_name VARCHAR(30) NOT NULL, 
+    last_name VARCHAR(50) NOT NULL, 
+    role_id INTEGER default 0, 
+    manager_id INTEGER default 0, 
     PRIMARY KEY(id)
-);
-
--- Created the table "role"
-CREATE TABLE role ( -- role
-    id INT PRIMARY KEY,
-    title VARCHAR(30), --  to hold role title
-    salary DECIMAL, -- to hold role salary
-    department_id INT -- to hold reference to department role belongs to
 );
 
 -- Inserted a set of records into the table
