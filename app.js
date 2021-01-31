@@ -38,21 +38,6 @@ function addEmployee() {
 };
 addEmployee();
 
-// // Filter by Role Function
-// function filterRole(role) {
-//   const data = {
-//     employeeList: [],
-//   };
-
-//   for (let i = 0; i < employeeList.length; i++) {
-//     const employees = employees[i];
-
-//     if (employees.role === role) {
-//       data.employeeList.push(employees);
-//     }
-//   }
-//   return data;
-// }
 
 // const cTable = require("console.table");
 
