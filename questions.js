@@ -19,14 +19,6 @@ module.exports = [
     ]
   },
 
-  // Add employee 
-  { 
-    name: "addEmp",
-    type: "confirm",
-    message: "Add employee?",
-    // when: questions => questions.addEmp = true 
-  },
-
   // What is the employee's first name?
   {
     name: "firstName",
@@ -55,7 +47,7 @@ module.exports = [
     type: "input",
     message: "What is the employee's salary?",
   },
-  
+
   // What is the employee's department?
   {
     name: "employeeDept",
