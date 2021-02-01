@@ -19,16 +19,20 @@ connection.connect((error) => {
   console.log("Connected to Database \n");
 
   // console.log("Viewing employee list. \n");
-  // setTimeout(() => {
-  //   viewEmployees();
-  // }, 1000);
+  setTimeout(() => {
+    viewEmployees();
+  }, 1000);
   // viewEmployees();
 
-  console.log("Adding new employee. \n");
+  // console.log("Adding new employee. \n");
   setTimeout(() => {
     addEmployee();
   }, 1000);
 
+  console.log("Viewing employee list. \n");
+  setTimeout(() => {
+    viewEmployees();
+  }, 1000);
   // init();
 });
 
@@ -48,7 +52,7 @@ function viewEmployees() {
 
 // add employee function
 function addEmployee() {
-  // console.log("Adding new employee...\n");
+  console.log("Adding new employee...\n");
   var query = connection.query(
     "INSERT INTO employees SET ?",
     {
@@ -65,6 +69,7 @@ function addEmployee() {
       // updateList();
     }
   );
+  console.log(query.sql);
 }
 
 const promptUser = async () => {
