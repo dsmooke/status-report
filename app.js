@@ -20,22 +20,22 @@ connection.connect((error) => {
   // init();
 });
 
-let employeeList = [];
+// let employeeList = [];
 
 const promptUser = async () => {
   const answers = await inquirer.prompt(questions);
 };
 
-// const init = async () => {
-//   try {
-//     await promptUser();
+const init = async () => {
+  try {
+    await promptUser();
 
-//     console.log(employeeList);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-// init();
+    // console.log(employeeList);
+  } catch (error) {
+    console.log(error);
+  }
+};
+init();
 
 connection.end(function (err) {
   // The connection is terminated now
