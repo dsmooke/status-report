@@ -13,7 +13,7 @@ CREATE TABLE employees (
     first_name VARCHAR(30) NOT NULL, 
     last_name VARCHAR(50) NOT NULL, 
     role_id INTEGER default 0, 
-    manager_id INTEGER default 0, 
+    manager_id INTEGER default 0, -- VARCHAR(30) NOT NULL?
     PRIMARY KEY(id)
 );
 
@@ -64,11 +64,23 @@ SELECT * FROM employees;
 
 
 
--- -- show ALL employees
--- SELECT id, first_name, last_name
+-- Show ALL employees
+-- SELECT id, first_name, last_name, 
 -- FROM employees
--- INNER JOIN role ON employees.role_id = role.id;
+-- INNER JOIN role 
+-- ON employees.role_id = role.title;
 
--- SELECT id, name
--- FROM department
--- RIGHT JOIN department ON employees.role_id = role.id;
+-- Show employees with specific job
+-- SELECT first_name, last_name 
+-- FROM employees
+-- INNER JOIN role 
+-- ON employees.role_id = role.title
+
+-- View department
+-- SELECT name
+-- FROM department 
+
+-- View managers
+-- SELECT manager_id
+-- FROM employees
+-- WHERE 
