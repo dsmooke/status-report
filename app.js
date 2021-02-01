@@ -17,13 +17,13 @@ const connection = mysql.createConnection({
 connection.connect((error) => {
   if (error) throw error;
   console.log("Connected to Database");
-    // init();
+  // init();
 });
 
 let employeeList = [];
 
 const promptUser = async () => {
-  const answers = await inquirer.prompt(questions)
+  const answers = await inquirer.prompt(questions);
 
   // const newEmployee = (questions.firstName, questions.lastName, questions.employeeRole, questions.salary, questions.employeeDept, questions.employeeManager)
 };
@@ -34,22 +34,20 @@ const promptUser = async () => {
 //     const employee = new Employee(questions.firstName, questions.lastName, questions.employeeRole, questions.salary, questions.employeeDept, questions.employeeManager)
 //     employeeList.push(employee);
 
-//     } 
+//     }
 // };
 // addEmployee();
 
+// const init = async () => {
+//   try {
+//     await promptUser();
 
-const init = async () => {
-  try{
-    await promptUser();
-
-    console.log(employeeList);
-
-  } catch (error) {
-    console.log(error);
-  }
-};
-init();
+//     console.log(employeeList);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+// init();
 
 connection.end(function (err) {
   // The connection is terminated now
