@@ -16,9 +16,12 @@ const connection = mysql.createConnection({
 
 connection.connect((error) => {
   if (error) throw error;
-  console.log("Connected to Database");
+  console.log("Connected to Database \n");
 
-  // console.log("Viewing employee list \n");
+  // console.log("Viewing employee list. \n");
+  setTimeout(() => {
+    viewEmployees();
+  }, 1000);
   // viewEmployees();
 
   // init();
@@ -33,7 +36,7 @@ function viewEmployees() {
     if (err) throw err;
     // Log all results of the SELECT statement
     console.log(res);
-    connection.end();
+    // connection.end();
   });
   // viewEmployees();
 }
@@ -42,17 +45,17 @@ const promptUser = async () => {
   const answers = await inquirer.prompt(questions);
 };
 
-const init = async () => {
-  try {
-    await promptUser();
+// const init = async () => {
+//   try {
+//     await promptUser();
 
-    // console.log(employeeList);
-  } catch (error) {
-    console.log(error);
-  }
-};
-init();
+//     // console.log(employeeList);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+// init();
 
-connection.end(function (err) {
-  // The connection is terminated now
-});
+// connection.end(function (err) {
+// The connection is terminated now
+// });
