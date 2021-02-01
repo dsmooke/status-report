@@ -48,15 +48,14 @@ function viewEmployees() {
 
 // add employee function
 function addEmployee() {
-  console.log("Adding new employee...\n");
+  // console.log("Adding new employee...\n");
   var query = connection.query(
     "INSERT INTO employees SET ?",
     {
       id: 4,
       first_name: "Aphrodite",
       last_name: "Venus",
-      role_id: "Love Director",
-      salary: 4000,
+      role_id: 4,
       manager_id: 1,
     },
     function (err, res) {
