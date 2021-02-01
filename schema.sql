@@ -47,6 +47,15 @@ VALUES (3, "Hades", "Pluto", 3, 1);
 -- INSERT INTO department (id, name)
 -- VALUES (1, "Heavens");
 
+-- INSERT INTO department (id, name)
+-- VALUES (2, "Sea");
+
+-- INSERT INTO department (id, name)
+-- VALUES (3, "Underworld");
+
+-- INSERT INTO department (id, name)
+-- VALUES (4, "Heart");
+
 -- INSERT INTO role (id, title, salary, department_id)
 -- VALUES (1, "Lightning Director", 911000, "Heavens");
 
