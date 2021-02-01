@@ -26,16 +26,6 @@ const promptUser = async () => {
   const answers = await inquirer.prompt(questions);
 };
 
-// function addEmployee() {
-//   if (questions.doWhat === "Add Employee") {
-
-//     const employee = new Employee(questions.firstName, questions.lastName, questions.employeeRole, questions.salary, questions.employeeDept, questions.employeeManager)
-//     employeeList.push(employee);
-
-//     }
-// };
-// addEmployee();
-
 // const init = async () => {
 //   try {
 //     await promptUser();
