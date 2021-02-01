@@ -19,20 +19,31 @@ connection.connect((error) => {
   console.log("Connected to Database \n");
 
   // console.log("Viewing employee list. \n");
-  setTimeout(() => {
-    viewEmployees();
-  }, 1000);
+  // setTimeout(() => {
+  //   viewEmployees();
+  // }, 1000);
   // viewEmployees();
 
   // console.log("Adding new employee. \n");
+  // setTimeout(() => {
+  //   addEmployee();
+  // }, 1000);
+
+  // console.log("Viewing employee list. \n");
+  // setTimeout(() => {
+  //   viewEmployees();
+  // }, 1000);
+
+  console.log("Deleting employee.\n");
   setTimeout(() => {
-    addEmployee();
+    deleteEmployee();
   }, 1000);
 
-  console.log("Viewing employee list. \n");
+  // console.log("Viewing employee list. \n");
   setTimeout(() => {
     viewEmployees();
   }, 1000);
+
   // init();
 });
 
@@ -40,7 +51,7 @@ connection.connect((error) => {
 
 // view Employee function
 function viewEmployees() {
-  console.log("Viewing employee list...\n");
+  // console.log("Viewing (new) employee list...\n");
   connection.query("SELECT * FROM employees", function (err, res) {
     if (err) throw err;
     // Log all results of the SELECT statement
@@ -52,7 +63,7 @@ function viewEmployees() {
 
 // add employee function
 function addEmployee() {
-  console.log("Adding new employee...\n");
+  // console.log("Adding new employee...\n");
   var query = connection.query(
     "INSERT INTO employees SET ?",
     {
@@ -73,7 +84,7 @@ function addEmployee() {
 }
 
 function updateList() {
-  console.log("Updating employees...\n");
+  // console.log("Updating employees...\n");
   var query = connection.query(
     "UPDATE employees SET ? WHERE ?",
     [
@@ -85,6 +96,23 @@ function updateList() {
     function (err, res) {
       if (err) throw err;
       console.log(res.affectedRows + " List updated!\n");
+    }
+  );
+}
+
+function deleteEmployee() {
+  console.log("Deleting employee...\n");
+  var query = connection.query(
+    "DELETE FROM employees WHERE ?",
+    {
+      first_name: "Hades",
+    },
+    function (err, res) {
+      if (err) throw err;
+      console.log(res.affectedRows + " employee deleted!\n");
+
+      // Call viewEmployees AFTER the DELETE completes
+      viewEmployees();
     }
   );
 }
