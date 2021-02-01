@@ -19,10 +19,15 @@ connection.connect((error) => {
   console.log("Connected to Database \n");
 
   // console.log("Viewing employee list. \n");
-  setTimeout(() => {
-    viewEmployees();
-  }, 1000);
+  // setTimeout(() => {
+  //   viewEmployees();
+  // }, 1000);
   // viewEmployees();
+
+  console.log("Adding new employee. \n");
+  setTimeout(() => {
+    addEmployee();
+  }, 1000);
 
   // init();
 });
@@ -39,6 +44,28 @@ function viewEmployees() {
     // connection.end();
   });
   // viewEmployees();
+}
+
+// add employee function
+function addEmployee() {
+  console.log("Adding new employee...\n");
+  var query = connection.query(
+    "INSERT INTO employees SET ?",
+    {
+      id: 4,
+      first_name: "Aphrodite",
+      last_name: "Venus",
+      role_id: "Love Director",
+      salary: 4000,
+      manager_id: 1,
+    },
+    function (err, res) {
+      if (err) throw err;
+      console.log(res.affectedRows + " employee inserted!\n");
+      // call updateList AFTER the INSERT completes
+      // updateList();
+    }
+  );
 }
 
 const promptUser = async () => {
