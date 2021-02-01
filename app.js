@@ -66,10 +66,27 @@ function addEmployee() {
       if (err) throw err;
       console.log(res.affectedRows + " employee inserted!\n");
       // call updateList AFTER the INSERT completes
-      // updateList();
+      updateList();
     }
   );
   console.log(query.sql);
+}
+
+function updateList() {
+  console.log("Updating employees...\n");
+  var query = connection.query(
+    "UPDATE employees SET ? WHERE ?",
+    [
+      {
+        first_name: "King",
+      },
+      { last_name: "Jupiter" },
+    ],
+    function (err, res) {
+      if (err) throw err;
+      console.log(res.affectedRows + " List updated!\n");
+    }
+  );
 }
 
 const promptUser = async () => {
