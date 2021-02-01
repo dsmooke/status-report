@@ -24,8 +24,6 @@ let employeeList = [];
 
 const promptUser = async () => {
   const answers = await inquirer.prompt(questions);
-
-  // const newEmployee = (questions.firstName, questions.lastName, questions.employeeRole, questions.salary, questions.employeeDept, questions.employeeManager)
 };
 
 // function addEmployee() {
