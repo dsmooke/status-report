@@ -34,7 +34,7 @@ CREATE TABLE role (
 );
 
 
--- Inserted a set of records into the table, columns in ()
+-- Inserted a set of records into the employee table
 INSERT INTO employees (id, first_name, last_name, role_id, manager_id)
 VALUES (1, "Zeus", "Jupiter", 1, 1);
 
@@ -44,6 +44,8 @@ VALUES (2, "Posiedon", "Neptune", 2, 1);
 INSERT INTO employees (id, first_name, last_name, role_id, manager_id)
 VALUES (3, "Hades", "Pluto", 3, 1);
 
+
+-- Inserted a set of records into the department table
 INSERT INTO department (id, name)
 VALUES (1, "Heavens");
 
@@ -56,6 +58,7 @@ VALUES (3, "Underworld");
 INSERT INTO department (id, name)
 VALUES (4, "Heart");
 
+-- Inserted a set of records into the role table 
 INSERT INTO role (id, title, salary, department_id)
 VALUES (1, "Lightning Director", 911000, "1");
 
