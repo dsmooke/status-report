@@ -33,30 +33,29 @@ CREATE TABLE role (
     PRIMARY KEY (id)
 );
 
-
 -- Inserted a set of records into the employee table
 INSERT INTO employees (id, first_name, last_name, role_id, manager_id)
-VALUES (1, "Zeus", "Jupiter", 1, 1);
-
-INSERT INTO employees (id, first_name, last_name, role_id, manager_id)
-VALUES (2, "Posiedon", "Neptune", 2, 1);
-
-INSERT INTO employees (id, first_name, last_name, role_id, manager_id)
-VALUES (3, "Hades", "Pluto", 3, 1);
-
+VALUES  (1, "Zeus", "Jupiter", 1, 1),
+        (2, "Posiedon", "Neptune", 2, 1),
+        (3, "Hades", "Pluto", 3, 1),
+        (4, "Aphrodite", "Venus", 4, 2),
+        (5, "Artemis", "Diana", 5, 2),
+        (6, "Ares", "Mars", 6, 2),
+        (7, "Athena", "Minerva", 7, 2),
+        (8, "Hermes", "Mercury", 8, 2)
+        (9, "Hera", "Juno", 9, 1)
 
 -- Inserted a set of records into the department table
 INSERT INTO department (id, name)
-VALUES (1, "Heavens");
-
-INSERT INTO department (id, name)
-VALUES (2, "Sea");
-
-INSERT INTO department (id, name)
-VALUES (3, "Underworld");
-
-INSERT INTO department (id, name)
-VALUES (4, "Heart");
+VALUES  (1, "Heavens"),
+        (2, "Sea"),
+        (3, "Underworld"),
+        (4, "Love"),
+        (5, "Moon"),
+        (6, "War"),
+        (7, "Wisdom"),
+        (8, "Communications"),
+        (9, "Marriage")
 
 -- Inserted a set of records into the role table 
 INSERT INTO role (id, title, salary, department_id)
