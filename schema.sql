@@ -13,7 +13,7 @@ CREATE TABLE employees (
     first_name VARCHAR(30) NOT NULL, 
     last_name VARCHAR(50) NOT NULL, 
     role_id INTEGER default 0, 
-    manager_id INTEGER default 0, -- VARCHAR(30) NOT NULL?
+    manager_id INTEGER default 0,
     PRIMARY KEY(id)
 );
 
@@ -42,12 +42,12 @@ VALUES  (1, "Zeus", "Jupiter", 1, 1),
         (5, "Artemis", "Diana", 5, 2),
         (6, "Ares", "Mars", 6, 2),
         (7, "Athena", "Minerva", 7, 2),
-        (8, "Hermes", "Mercury", 8, 2)
-        (9, "Hera", "Juno", 9, 1)
+        (8, "Hermes", "Mercury", 8, 2),
+        (9, "Hera", "Juno", 9, 1);
 
 -- Inserted a set of records into the department table
 INSERT INTO department (id, name)
-VALUES  (1, "Heavens"),
+VALUES  (1, "Heavens"), 
         (2, "Sea"),
         (3, "Underworld"),
         (4, "Love"),
@@ -55,7 +55,7 @@ VALUES  (1, "Heavens"),
         (6, "War"),
         (7, "Wisdom"),
         (8, "Messages"),
-        (9, "Marriage")
+        (9, "Marriage");
 
 -- Inserted a set of records into the role table 
 INSERT INTO role (id, title, salary, department_id)
@@ -67,7 +67,7 @@ VALUES  (1, "Head Electrician", 10000, 1),
         (6, "Defense Secretary", 35000, 6),
         (7, "Advice Columnist", 40000, 7),
         (8, "Communications Director", 45000, 8),
-        (9, "Marriage Counselor", 50000, 9),
+        (9, "Marriage Counselor", 50000, 9);
 
 
 SELECT * FROM employees;
@@ -75,16 +75,16 @@ SELECT * FROM employees;
 
 
 -- Show ALL employees
--- SELECT id, first_name, last_name, 
--- FROM employees
--- INNER JOIN role 
--- ON employees.role_id = role.title;
-
--- Show employees with specific job
-SELECT first_name, last_name 
+SELECT id, first_name, last_name, 
 FROM employees
 INNER JOIN role 
-ON employees.role_id = role.title
+ON employees.role_id = role.title;
+
+-- Show employees with specific job
+-- SELECT first_name, last_name 
+-- FROM employees
+-- INNER JOIN role 
+-- ON employees.role_id = role.title
 
 -- View department
 -- SELECT name
