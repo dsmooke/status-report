@@ -1,5 +1,9 @@
 const connection = require("./db/EMS_db");
 
+const Employee = require("./lib/Employee");
+const Department = require("./lib/Department");
+const Role = require("./lib/Role");
+
 const questions = require("./lib/questions");
 // console.log(questions.find((item) => item.name === "firstName")); // access questions
 
@@ -10,8 +14,10 @@ function viewEmployees() {
   // console.log("Viewing (new) employee list...\n");
   connection.query("SELECT * FROM employees", function (err, res) {
     if (err) throw err;
+
     // Log all results of the SELECT statement
     console.log(res);
+
     // connection.end();
   });
   // viewEmployees();
