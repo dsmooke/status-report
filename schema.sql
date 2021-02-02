@@ -54,20 +54,20 @@ VALUES  (1, "Heavens"),
         (5, "Moon"),
         (6, "War"),
         (7, "Wisdom"),
-        (8, "Communications"),
+        (8, "Messages"),
         (9, "Marriage")
 
 -- Inserted a set of records into the role table 
 INSERT INTO role (id, title, salary, department_id)
-VALUES (1, "Lightning Director", 911000, "1");
-
-INSERT INTO role (id, title, salary, department_id)
-VALUES (2, "Sea Director", 15000, "2");
-
-INSERT INTO role (id, title, salary, department_id)
-VALUES (3, "Underworld Director", 666000, "3");
-
-
+VALUES  (1, "Head Electrician", 10000, 1),
+        (2, "Submarine Technician", 15000, 2),
+        (3, "Funeral Director", 20000, 3),
+        (4, "Matchmaker", 25000, 4),
+        (5, "Nasa Engineer", 30000, 5),
+        (6, "Defense Secretary", 35000, 6),
+        (7, "Advice Columnist", 40000, 7),
+        (8, "Communications Director", 45000, 8),
+        (9, "Marriage Counselor", 50000, 9),
 
 
 SELECT * FROM employees;
