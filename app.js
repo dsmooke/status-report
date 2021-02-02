@@ -34,15 +34,25 @@ connection.connect((error) => {
   //   viewEmployees();
   // }, 1000);
 
-  console.log("Deleting employee.\n");
-  setTimeout(() => {
-    deleteEmployee();
-  }, 1000);
+  // console.log("Updating employee's role. \n");
+  // setTimeout(() => {
+  //   updateRole();
+  // }, 1000);
 
   // console.log("Viewing employee list. \n");
-  setTimeout(() => {
-    viewEmployees();
-  }, 1000);
+  // setTimeout(() => {
+  //   viewEmployees();
+  // }, 1000);
+
+  // console.log("Deleting employee.\n");
+  // setTimeout(() => {
+  //   deleteEmployee();
+  // }, 1000);
+
+  // // console.log("Viewing employee list. \n");
+  // setTimeout(() => {
+  //   viewEmployees();
+  // }, 1000);
 
   // init();
 });
@@ -83,19 +93,19 @@ function addEmployee() {
   console.log(query.sql);
 }
 
-function updateList() {
+function updateRole() {
   // console.log("Updating employees...\n");
   var query = connection.query(
     "UPDATE employees SET ? WHERE ?",
     [
       {
-        first_name: "King",
+        role_id: 8,
       },
       { last_name: "Jupiter" },
     ],
     function (err, res) {
       if (err) throw err;
-      console.log(res.affectedRows + " List updated!\n");
+      console.log(res.affectedRows + " Role updated!\n");
     }
   );
 }
@@ -117,9 +127,9 @@ function deleteEmployee() {
   );
 }
 
-const promptUser = async () => {
-  const answers = await inquirer.prompt(questions);
-};
+// const promptUser = async () => {
+//   const answers = await inquirer.prompt(questions);
+// };
 
 // const init = async () => {
 //   try {
