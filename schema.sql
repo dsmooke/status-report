@@ -44,20 +44,28 @@ VALUES (2, "Posiedon", "Neptune", 2, 1);
 INSERT INTO employees (id, first_name, last_name, role_id, manager_id)
 VALUES (3, "Hades", "Pluto", 3, 1);
 
--- INSERT INTO department (id, name)
--- VALUES (1, "Heavens");
+INSERT INTO department (id, name)
+VALUES (1, "Heavens");
 
--- INSERT INTO department (id, name)
--- VALUES (2, "Sea");
+INSERT INTO department (id, name)
+VALUES (2, "Sea");
 
--- INSERT INTO department (id, name)
--- VALUES (3, "Underworld");
+INSERT INTO department (id, name)
+VALUES (3, "Underworld");
 
--- INSERT INTO department (id, name)
--- VALUES (4, "Heart");
+INSERT INTO department (id, name)
+VALUES (4, "Heart");
 
--- INSERT INTO role (id, title, salary, department_id)
--- VALUES (1, "Lightning Director", 911000, "Heavens");
+INSERT INTO role (id, title, salary, department_id)
+VALUES (1, "Lightning Director", 911000, "1");
+
+INSERT INTO role (id, title, salary, department_id)
+VALUES (2, "Sea Director", 15000, "2");
+
+INSERT INTO role (id, title, salary, department_id)
+VALUES (3, "Underworld Director", 666000, "3");
+
+
 
 
 SELECT * FROM employees;
@@ -71,10 +79,10 @@ SELECT * FROM employees;
 -- ON employees.role_id = role.title;
 
 -- Show employees with specific job
--- SELECT first_name, last_name 
--- FROM employees
--- INNER JOIN role 
--- ON employees.role_id = role.title
+SELECT first_name, last_name 
+FROM employees
+INNER JOIN role 
+ON employees.role_id = role.title
 
 -- View department
 -- SELECT name
