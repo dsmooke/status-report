@@ -1,14 +1,9 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
-const fs = require("fs");
-const util = require("util");
-
-// Lets the port be set by Heroku
-const PORT = process.env.PORT || 3306;
 
 const connection = mysql.createConnection({
   host: "localhost",
-  port: PORT,
+  port: 3306,
   user: "root",
   password: "password",
   database: "employee_db",
@@ -16,13 +11,12 @@ const connection = mysql.createConnection({
 
 connection.connect((error) => {
   if (error) throw error;
-  console.log(`Connected to Employee Database at Port ${PORT} \n`);
+  console.log(`Connected to Employee Database \n`);
 
   // console.log("Viewing employee list. \n");
   // setTimeout(() => {
   //   viewEmployees();
   // }, 1000);
-  // viewEmployees();
 
   // console.log("Adding new employee. \n");
   // setTimeout(() => {
