@@ -48,7 +48,7 @@ connection.connect((error) => {
   //   viewEmployees();
   // }, 1000);
 
-  // init();
+  init();
 });
 
 module.exports = connection;
