@@ -15,12 +15,12 @@ connection.connect((error) => {
 
   // console.log("Viewing employee list. \n");
   // setTimeout(() => {
-  //   viewEmployees();
+  // viewEmployees();
   // }, 1000);
 
   // console.log("Adding new employee. \n");
   // setTimeout(() => {
-  //   addEmployee();
+  // addEmployee();
   // }, 1000);
 
   // console.log("Viewing employee list. \n");
@@ -30,7 +30,7 @@ connection.connect((error) => {
 
   // console.log("Updating employee's role. \n");
   // setTimeout(() => {
-  //   updateRole();
+  // updateRole();
   // }, 1000);
 
   // console.log("Viewing employee list. \n");
@@ -48,7 +48,7 @@ connection.connect((error) => {
   //   viewEmployees();
   // }, 1000);
 
-  init();
+  // init();
 });
 
 module.exports = connection;
