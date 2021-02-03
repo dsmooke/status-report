@@ -15,6 +15,9 @@ CREATE TABLE employees (
     role_id INTEGER default 0, 
     manager_id INTEGER default 0,
     PRIMARY KEY(id)
+    FOREIGN KEY (role_id) REFERENCES role(id)
+    FOREIGN KEY (manager_id) REFERENCES employee(id)
+
 );
 
 -- Created the table "department"
@@ -31,43 +34,44 @@ CREATE TABLE role (
     salary DECIMAL, 
     department_id INT,
     PRIMARY KEY (id)
+    FOREIGN KEY (department_id) REFERENCES department(id)
 );
 
 -- Inserted a set of records into the employee table
-INSERT INTO employees (id, first_name, last_name, role_id, manager_id)
-VALUES  (1, "Zeus", "Jupiter", 1, 1),
-        (2, "Posiedon", "Neptune", 2, 1),
-        (3, "Hades", "Pluto", 3, 1),
-        (4, "Aphrodite", "Venus", 4, 2),
-        (5, "Artemis", "Diana", 5, 2),
-        (6, "Ares", "Mars", 6, 2),
-        (7, "Athena", "Minerva", 7, 2),
-        (8, "Hermes", "Mercury", 8, 2),
-        (9, "Hera", "Juno", 9, 1);
+INSERT INTO employees (first_name, last_name, role_id, manager_id)
+VALUES  ( "Zeus", "Jupiter", 1, 1),
+        ( "Posiedon", "Neptune", 2, 1),
+        ( "Hades", "Pluto", 3, 1),
+        ( "Aphrodite", "Venus", 4, 2),
+        ( "Artemis", "Diana", 5, 2),
+        ( "Ares", "Mars", 6, 2),
+        ( "Athena", "Minerva", 7, 2),
+        ( "Hermes", "Mercury", 8, 2),
+        ( "Hera", "Juno", 9, 1);
 
 -- Inserted a set of records into the department table
 INSERT INTO department (id, name)
-VALUES  (1, "Heavens"), 
-        (2, "Sea"),
-        (3, "Underworld"),
-        (4, "Love"),
-        (5, "Moon"),
-        (6, "War"),
-        (7, "Wisdom"),
-        (8, "Messages"),
-        (9, "Marriage");
+VALUES  ( "Heavens"), 
+        ("Sea"),
+        ( "Underworld"),
+        ("Love"),
+        ( "Moon"),
+        ("War"),
+        ("Wisdom"),
+        ("Messages"),
+        ( "Marriage");
 
 -- Inserted a set of records into the role table 
 INSERT INTO role (id, title, salary, department_id)
-VALUES  (1, "Head Electrician", 10000, 1),
-        (2, "Submarine Technician", 15000, 2),
-        (3, "Funeral Director", 20000, 3),
-        (4, "Matchmaker", 25000, 4),
-        (5, "Nasa Engineer", 30000, 5),
-        (6, "Defense Secretary", 35000, 6),
-        (7, "Advice Columnist", 40000, 7),
-        (8, "Communications Director", 45000, 8),
-        (9, "Marriage Counselor", 50000, 9);
+VALUES  ("Head Electrician", 10000, 1),
+        ( "Submarine Technician", 15000, 2),
+        ( "Funeral Director", 20000, 3),
+        ( "Matchmaker", 25000, 4),
+        ("Nasa Engineer", 30000, 5),
+        ( "Defense Secretary", 35000, 6),
+        ("Advice Columnist", 40000, 7),
+        ( "Communications Director", 45000, 8),
+        ( "Marriage Counselor", 50000, 9);
 
 
 SELECT * FROM employees;
@@ -75,10 +79,10 @@ SELECT * FROM employees;
 
 
 -- Show ALL employees
-SELECT id, first_name, last_name, 
-FROM employees
-INNER JOIN role 
-ON employees.role_id = role.title;
+-- SELECT id, first_name, last_name, 
+-- FROM employees
+-- INNER JOIN role 
+-- ON employees.role_id = role.title;
 
 -- Show employees with specific job
 -- SELECT first_name, last_name 
@@ -93,4 +97,5 @@ ON employees.role_id = role.title;
 -- View managers
 -- SELECT manager_id
 -- FROM employees
--- WHERE 
+-- INNER JOIN department
+-- ON employees.manager_id = department.name
