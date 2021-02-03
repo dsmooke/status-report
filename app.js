@@ -20,7 +20,7 @@ async function init() {
           return viewEmployees();
           break;
         case "Add Employee":
-          return addEmployee();
+          return addEmployee(answer);
           break;
         case "View All Departments":
           // return viewDepartments();
@@ -33,6 +33,9 @@ async function init() {
           break;
         case "Update Employee Role":
           return updateRole();
+          break;
+        case "Remove Employee":
+          return deleteEmployee();
           break;
       }
     });
@@ -57,22 +60,23 @@ function viewEmployees() {
 // viewEmployees();
 
 // add employee function
-function addEmployee() {
+function addEmployee(answer) {
   // console.log("Adding new employee...\n");
+  console.log("Adding employee", answer);
   var query = connection.query(
     "INSERT INTO employees SET ?",
+    // INSERT INTO employees VALUES ? ?
     {
-      id: 29,
       first_name: "",
       last_name: "",
-      role_id: 1000,
+      role_id: 1,
       manager_id: 1,
     },
     function (err, res) {
       if (err) throw err;
       console.log(res.affectedRows + " employee inserted!\n");
       // call updateList AFTER the INSERT completes
-      updateList();
+      // updateList();
     }
   );
   console.log(query.sql);
