@@ -48,14 +48,17 @@ init();
 // view Employee function
 function viewEmployees() {
   // console.log("Viewing (new) employee list...\n");
-  connection.query("SELECT * FROM employees", function (err, res) {
-    if (err) throw err;
+  connection.query(
+    "SELECT * FROM employees FULL JOIN role, department",
+    function (err, res) {
+      if (err) throw err;
 
-    // Log all results of the SELECT statement
-    console.table(res);
+      // Log all results of the SELECT statement
+      console.table(res);
 
-    // connection.end();
-  });
+      // connection.end();
+    }
+  );
 }
 // viewEmployees();
 
@@ -111,7 +114,7 @@ function deleteEmployee() {
       console.log(res.affectedRows + " employee deleted!\n");
 
       // Call viewEmployees AFTER the DELETE completes
-      viewEmployees();
+      // viewEmployees();
     }
   );
 }
