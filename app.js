@@ -70,8 +70,8 @@ function addEmployee(answer) {
     "INSERT INTO employees SET ?",
     // INSERT INTO employees VALUES ? ?
     {
-      first_name: answer.firstName,
-      last_name: answer.lastName,
+      first_name: answer,
+      last_name: answer,
     },
     function (err, res) {
       if (err) throw err;
@@ -89,9 +89,9 @@ function updateRole() {
     "UPDATE employees SET ? WHERE ?",
     [
       {
-        role_id: 8,
+        role_id: 3,
       },
-      { last_name: "Test" },
+      { last_name: "Hades" },
     ],
     function (err, res) {
       if (err) throw err;
