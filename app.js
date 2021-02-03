@@ -49,7 +49,7 @@ init();
 function viewEmployees() {
   // console.log("Viewing (new) employee list...\n");
   connection.query(
-    "SELECT * FROM employees FULL JOIN role, department",
+    "SELECT * FROM employees LEFT JOIN role ON employees.role_id = role.id",
     function (err, res) {
       if (err) throw err;
 
@@ -72,8 +72,6 @@ function addEmployee(answer) {
     {
       first_name: "",
       last_name: "",
-      role_id: 1,
-      manager_id: 1,
     },
     function (err, res) {
       if (err) throw err;
