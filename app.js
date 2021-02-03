@@ -49,7 +49,7 @@ init();
 function viewEmployees() {
   // console.log("Viewing (new) employee list...\n");
   connection.query(
-    "SELECT first_name, last_name, role_id FROM employees INNER JOIN role ON employees.role_id = role.id INNER JOIN department ON role.department_id = department.id",
+    "SELECT first_name, last_name, department.name, role.title, role.salary FROM employees INNER JOIN role ON employees.role_id = role.id INNER JOIN department ON role.department_id = department.id",
     function (err, res) {
       if (err) throw err;
 
@@ -70,8 +70,8 @@ function addEmployee(answer) {
     "INSERT INTO employees SET ?",
     // INSERT INTO employees VALUES ? ?
     {
-      first_name: answer,
-      last_name: answer,
+      first_name: answer.firstName,
+      last_name: answer.lastName,
     },
     function (err, res) {
       if (err) throw err;
