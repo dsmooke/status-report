@@ -1,4 +1,4 @@
-const mysql = require("mysql");
+const connection = require("./db/EMS_db");
 const inquirer = require("inquirer");
 
 const Employee = require("./lib/Employee");
@@ -8,33 +8,39 @@ const Role = require("./lib/Role");
 const questions = require("./lib/questions");
 const cTable = require("console.table");
 
-const connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "password",
-  database: "employee_db",
-});
-
-connection.connect((error) => {
-  if (error) throw error;
-  console.log(`Connected to Employee Database \n`);
-  init();
-});
-
 async function init() {
   // console.log("Initializing");
 
-  let answer = await inquirer.prompt(questions).then(function (answer) {
-    // console.log(answer);
+  try {
+    let answer = await inquirer.prompt(questions).then(function (answer) {
+      // console.log(answer);
 
-    switch (answer.doWhat) {
-      case "View All Employees":
-        return viewEmployees();
-        break;
-    }
-  });
+      switch (answer.doWhat) {
+        case "View All Employees":
+          return viewEmployees();
+          break;
+        case "Add Employee":
+          return addEmployee();
+          break;
+        case "View All Departments":
+          // return viewDepartments();
+          break;
+        case "View All Roles":
+          // return viewRoles();
+          break;
+        case "Add Role":
+          // return addRole();
+          break;
+        case "Update Employee Role":
+          return updateRole();
+          break;
+      }
+    });
+  } catch (error) {
+    throw error;
+  }
 }
+init();
 
 // view Employee function
 function viewEmployees() {
@@ -50,61 +56,61 @@ function viewEmployees() {
 }
 // viewEmployees();
 
-// // add employee function
-// function addEmployee() {
-//   // console.log("Adding new employee...\n");
-//   var query = connection.query(
-//     "INSERT INTO employees SET ?",
-//     {
-//       id: 4,
-//       first_name: "Aphrodite",
-//       last_name: "Venus",
-//       role_id: 4,
-//       manager_id: 1,
-//     },
-//     function (err, res) {
-//       if (err) throw err;
-//       console.log(res.affectedRows + " employee inserted!\n");
-//       // call updateList AFTER the INSERT completes
-//       updateList();
-//     }
-//   );
-//   console.log(query.sql);
-// }
+// add employee function
+function addEmployee() {
+  // console.log("Adding new employee...\n");
+  var query = connection.query(
+    "INSERT INTO employees SET ?",
+    {
+      id: 29,
+      first_name: "",
+      last_name: "",
+      role_id: 1000,
+      manager_id: 1,
+    },
+    function (err, res) {
+      if (err) throw err;
+      console.log(res.affectedRows + " employee inserted!\n");
+      // call updateList AFTER the INSERT completes
+      updateList();
+    }
+  );
+  console.log(query.sql);
+}
 
-// function updateRole() {
-//   // console.log("Updating employees...\n");
-//   var query = connection.query(
-//     "UPDATE employees SET ? WHERE ?",
-//     [
-//       {
-//         role_id: 8,
-//       },
-//       { last_name: "Jupiter" },
-//     ],
-//     function (err, res) {
-//       if (err) throw err;
-//       console.log(res.affectedRows + " Role updated!\n");
-//     }
-//   );
-// }
+function updateRole() {
+  // console.log("Updating employees...\n");
+  var query = connection.query(
+    "UPDATE employees SET ? WHERE ?",
+    [
+      {
+        role_id: 8,
+      },
+      { last_name: "Test" },
+    ],
+    function (err, res) {
+      if (err) throw err;
+      console.log(res.affectedRows + " Role updated!\n");
+    }
+  );
+}
 
-// function deleteEmployee() {
-//   console.log("Deleting employee...\n");
-//   var query = connection.query(
-//     "DELETE FROM employees WHERE ?",
-//     {
-//       first_name: "Hades",
-//     },
-//     function (err, res) {
-//       if (err) throw err;
-//       console.log(res.affectedRows + " employee deleted!\n");
+function deleteEmployee() {
+  console.log("Deleting employee...\n");
+  var query = connection.query(
+    "DELETE FROM employees WHERE ?",
+    {
+      first_name: "Hades",
+    },
+    function (err, res) {
+      if (err) throw err;
+      console.log(res.affectedRows + " employee deleted!\n");
 
-//       // Call viewEmployees AFTER the DELETE completes
-//       viewEmployees();
-//     }
-//   );
-// }
+      // Call viewEmployees AFTER the DELETE completes
+      viewEmployees();
+    }
+  );
+}
 
 // const promptUser = async () => {
 //   const answers = await inquirer.prompt(questions);
