@@ -22,15 +22,15 @@ async function init() {
         case "Add Employee":
           return addEmployee(answer);
           break;
-        case "View All Departments":
-          // return viewDepartments();
-          break;
-        case "View All Roles":
-          // return viewRoles();
-          break;
-        case "Add Role":
-          // return addRole();
-          break;
+        // case "View All Departments":
+        //   // return viewDepartments();
+        //   break;
+        // case "View All Roles":
+        //   // return viewRoles();
+        //   break;
+        // case "Add Role":
+        //   // return addRole();
+        //   break;
         case "Update Employee Role":
           return updateRole();
           break;
@@ -49,7 +49,7 @@ init();
 function viewEmployees() {
   // console.log("Viewing (new) employee list...\n");
   connection.query(
-    "SELECT * FROM employees LEFT JOIN role ON employees.role_id = role.id",
+    "SELECT first_name, last_name, role_id FROM employees INNER JOIN role ON employees.role_id = role.id INNER JOIN department ON role.department_id = department.id",
     function (err, res) {
       if (err) throw err;
 
@@ -70,8 +70,8 @@ function addEmployee(answer) {
     "INSERT INTO employees SET ?",
     // INSERT INTO employees VALUES ? ?
     {
-      first_name: "",
-      last_name: "",
+      first_name: answer.firstName,
+      last_name: answer.lastName,
     },
     function (err, res) {
       if (err) throw err;
@@ -112,25 +112,10 @@ function deleteEmployee() {
       console.log(res.affectedRows + " employee deleted!\n");
 
       // Call viewEmployees AFTER the DELETE completes
-      // viewEmployees();
+      viewEmployees();
     }
   );
 }
-
-// const promptUser = async () => {
-//   const answers = await inquirer.prompt(questions);
-// };
-
-// const init = async () => {
-//   try {
-//     await promptUser();
-
-//     // console.log(employeeList);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-// init();
 
 // connection.end(function (err) {
 // The connection is terminated now
