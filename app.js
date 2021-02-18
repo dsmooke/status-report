@@ -22,8 +22,6 @@ async function init() {
         case "Add Employee":
           return addEmployee(answer);
 
-        case "Return to Menu":
-          return returnMenu(answer);
         // case "View All Departments":
         //   // return viewDepartments();
         //   break;
@@ -33,12 +31,13 @@ async function init() {
         // case "Add Role":
         //   // return addRole();
         //   break;
-        case "Update Employee Role":
-          return updateRole();
-          break;
         case "Remove Employee":
           return deleteEmployee();
-          break;
+        case "Update Employee Role":
+          return updateRole();
+        // break;
+
+        // break;
       }
     });
   } catch (error) {
@@ -46,11 +45,6 @@ async function init() {
   }
 }
 init();
-
-// return to main menu function
-function returnMenu(answer) {
-  console.log("Returning to main menu", answer);
-}
 
 // view Employee function
 function viewEmployees() {
@@ -81,51 +75,53 @@ function addEmployee(answer) {
       first_name: answer.firstName,
       last_name: answer.lastName,
       role_id: answer.employeeRole,
-      manager_id: null,
+      manager_id: answer.employeeManager,
     },
     function (err, res) {
       if (err) throw err;
       console.log(res.affectedRows + " employee inserted!\n");
       // call updateList AFTER the INSERT completes
-      // updateList();
+      viewEmployees();
     }
   );
   console.log(query.sql);
   init();
 }
 
-function updateRole() {
-  // console.log("Updating employees...\n");
-  var query = connection.query(
-    "UPDATE employees SET ? WHERE ?",
-    [
-      {
-        role_id: 3,
-      },
-      { last_name: "Hades" },
-    ],
-    function (err, res) {
-      if (err) throw err;
-      console.log(res.affectedRows + " Role updated!\n");
-    }
-  );
-}
+// function updateRole() {
+//   // console.log("Updating employees...\n");
+//   var query = connection.query(
+//     "UPDATE employees SET ? WHERE ?",
+//     [
+//       {
+//         role_id: answer.updateRole,
+//       },
+//       { first_name: answer.firstName },
+//     ],
+//     function (err, res) {
+//       if (err) throw err;
+//       console.log(res.affectedRows + " Role updated!\n");
+//     }
+//   );
+//   init();
+// }
 
 function deleteEmployee() {
   console.log("Deleting employee...\n");
   var query = connection.query(
     "DELETE FROM employees WHERE ?",
     {
-      first_name: "Hades",
+      first_name: answer.removeEmployee,
     },
     function (err, res) {
       if (err) throw err;
       console.log(res.affectedRows + " employee deleted!\n");
-
       // Call viewEmployees AFTER the DELETE completes
       viewEmployees();
     }
   );
+
+  init();
 }
 
 // connection.end(function (err) {
