@@ -18,10 +18,12 @@ async function init() {
       switch (answer.doWhat) {
         case "View All Employees":
           return viewEmployees();
-          break;
+
         case "Add Employee":
           return addEmployee(answer);
-          break;
+
+        case "Return to Menu":
+          return returnMenu(answer);
         // case "View All Departments":
         //   // return viewDepartments();
         //   break;
@@ -45,6 +47,11 @@ async function init() {
 }
 init();
 
+// return to main menu function
+function returnMenu(answer) {
+  console.log("Returning to main menu", answer);
+}
+
 // view Employee function
 function viewEmployees() {
   // console.log("Viewing (new) employee list...\n");
@@ -56,6 +63,7 @@ function viewEmployees() {
       // Log all results of the SELECT statement
       console.table(res);
 
+      init();
       // connection.end();
     }
   );
@@ -72,6 +80,8 @@ function addEmployee(answer) {
     {
       first_name: answer.firstName,
       last_name: answer.lastName,
+      role_id: answer.employeeRole,
+      manager_id: null,
     },
     function (err, res) {
       if (err) throw err;
@@ -81,6 +91,7 @@ function addEmployee(answer) {
     }
   );
   console.log(query.sql);
+  init();
 }
 
 function updateRole() {
