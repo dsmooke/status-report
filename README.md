@@ -62,11 +62,29 @@ The goals above and the application can be further understood with the following
 **node.js**
 : an implementation of the V8 JavaScript engine without Chrome. It allows you to write server-side code using JavaScript. This means that you no longer need a browser to run JavaScript. You can do so from the command line. Node.js ships with a **standard library**.
 
-**schema**
-: a file
+**database**
+: a collection of data stored electronically.
 
-**.sql file**
-: a file to write MySQL
+**DBMS**
+: the database management system (i.e. MySQL)
+
+**MySQL**
+: the most popular SQL database with a relational structure.
+
+**SQL database**
+: Structured Query Language
+
+**relational database**
+: stores and finds data based on its relationship to other data in the database. Relational databases are tabular, meaning that data is stored in tables composed of rows and columns, much like a spreadsheet.
+
+**schema.sql**
+: a file that uses .sql database and used to write MySQL tables.
+
+**CRUD**
+: functions that Create Render Update Delete.
+
+**Joins**
+: command that joins two or more tables and the specified data and combines the data
 
 **inquirer**
 : an npm package that provides an easy way to capture user input in your `node.js` command-line interface applications. It provides several methods for asking questions and returning answers from the user that can be accessed by a `.then` promise function.
