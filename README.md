@@ -1,15 +1,20 @@
 # Status Report
 
+<span align="left">
+
+<a href="https://img.shields.io/badge/License-MIT-brightgreen?style=plastic"><img alt="M.I.T. License use" src="https://img.shields.io/badge/License-MIT-brightgreen?style=plastic"/></a>
+
+ </span>
+ 
 ## Description
 
-This is the twelfth assigment from the UConn Coding Boot Camp curriculum. We have covered the following topics thus far: Git, Terminal, GitHub, GitHub Pages, Web Accessibility, HTML, CSS, JavaScript, jQuery, Bootstrap, DOM Traversal, Web APIs, Third-Party APIs, Server-Side APIs, Node.js, Inquirer.js, and Express.js.
-
-This assigment utilizes [MySQL](https://www.npmjs.com/package/mysql), node, and the [Inquirer package](https://www.npmjs.com/package/inquirer).
+A simple command-line-application that utilizes [MySQL](https://www.npmjs.com/package/mysql), Node, and the [Inquirer package](https://www.npmjs.com/package/inquirer).
 
 View the application [here](https://youtu.be/-S6agP5CkMM)
 
 ## Table of Contents
 
+- [Technologies Used](#technologies-used)
 - [Goals](#goals)
 - [Definitions](#definitions)
 - [Instructions](#instructions)
@@ -19,7 +24,16 @@ View the application [here](https://youtu.be/-S6agP5CkMM)
 - [Video](#video)
 - [Usage](#usage)
 - [Credits](#credits)
+- [Contact](#contact)
+- [Bugs](#bugs)
 - [License](#license)
+
+## Technologies Used
+
+- Node
+- Express
+- Inquirer
+- MySQL
 
 ## Goals
 
@@ -213,6 +227,14 @@ Reference articles:
 - ["The Node.js fs module"](https://nodejs.dev/learn/the-nodejs-fs-module)
 - ["Promise"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - ["Install MySQL"](https://www.npmjs.com/package/mysql#install)
+
+## Contact
+
+[Dana Smooke]("https://github.com/dsmooke")
+
+## Bugs
+
+** **Update: March 2021** Some functions of the application are not yet finished. **
 
 ## License
 
